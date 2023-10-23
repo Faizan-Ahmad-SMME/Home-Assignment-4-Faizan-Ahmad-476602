@@ -1,0 +1,92 @@
+//----------------------------------------------------------------------------------------------------------------------------------
+// This code was written by Faizan Ahmad 476602 section A, this code is for the home tasks 1/3 found in the lab manual 4.
+#include<iostream>
+using namespace std;
+int main() {
+	
+	//Task 1
+	//Write a program that prints the numbers 1 to 150 except the multiples of 10, make use of the continue statment.
+	
+	int y=1;
+	
+	for ( int x=0; x<150; x++ ) {//the limits are defined and so the loop will run 149 times 
+		
+		if ( x % 10 == 0 ) { //this first if statment checks if the integer x is a multiple of 10 or not.
+			continue; //if true then the continue function skips this number and moves on to the next loop.
+		}
+		else {   // if not then the number is outputted. 
+			cout<<x<<", ";
+		}
+	
+	}
+	return 0;
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+//This code is written by Faizan Ahmad 476602 section A, the code covers task 2 from the lab manual 4.
+
+#include<iostream>
+using namespace std;
+int main() {
+	
+	//Task 2
+	//Write a C++ program tp find the sum of digets of a number.
+	//The sum of the digits means adding all the digits of any number, for example, we take any number like 348. its sum of all digits
+	//is 3 + 5 + 8 = 16
+	
+	int x, y, sum=0; //i used integer because the input must be a integer to work.
+					 //moreover during the calculation process it will be helpful to use int
+					 
+					 //the 3 integers defined are x(which is out input), y is the remainder and sum is the final product of the digits
+    cout<<"Enter the Number: "<<endl; // simple prompt that asks for an integer input
+    cin>>x;
+    while(x>0)   	 //i used while because the code should stop once ive reached the last digit.
+    {
+    				 //to explain the following set of equations i'll take input example 365, first of all y = x%10 means the remainder when 365 is 
+    				 //divided by 10, (365 % 10 = 5) hence our first sum is 0 + 5 = 5, then we divide x by 10 leaving us with 36.5 however because 36.5 is not 
+    				 //an integer the code only reads 36 this is what we want since now we can loop the code and find the remainder of 36 % 10 = 6
+    				 //this loop goes on until we reach 3 / 10 = 0.3, this is read by the code as 0 and since our while condition was x>0 the code breaks.
+        y = x%10;
+        sum = sum+y;
+        x = x/10;
+        			 //by the end we have 5 + 6 + 3 = 14
+    }
+    cout<<"Sum of Digits = "<<sum; // the output is the sum of all the digits 'sum'
+    cout<<endl;	
+return 0;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------
+//This code was written by Faizan Ahmad 476602 section A, Task 3 lab manual 4
+#include<iostream>
+using namespace std;
+int main () {
+//Task 3
+//The following code checks if a number is a prime number or not.	
+	int x, y; // the integers defined are x (input number) and y (the number that is used in the calculations).
+	
+	cout<<"Enter a number"<<endl; //simple input promt
+	cin>>x;
+	
+	if (x == 1 || x == 0) { //this first if checks if the input is 0 or 1, 0 and 1 are neither composite nor prime numbers.
+		cout<<"Your number is neither a prime number nor a composite number"; 
+	}
+	
+	for ( y = 2; y = x/2; y++ ) { //using 'for' we use the conditoon y=2 till y = x/2, the reasion behind using x/2 as our final limit is because 
+								  //y/2 is the greatest number that can produce our input when multiplied by 2
+		
+		if ( x % y == 0 ) {       // this condition checks all the y values between the limits if they can divide x with no remainder.
+			cout<<"Your number is a composite number";
+			
+		}
+		else {                    // this else is exicuted if the prevous 'if' statment failed.
+			cout<<"Your number is a prime number";
+
+		}
+	break;	                      // break used to stop the loop once an output is detected.
+	}
+	
+	
+return 0;	
+}
+
